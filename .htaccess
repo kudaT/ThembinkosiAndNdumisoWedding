@@ -1,0 +1,18 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]|$) [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+story\.html(?:[\s?]|$) [NC]
+RewriteRule ^story\.html$ /story [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+party\.html(?:[\s?]|$) [NC]
+RewriteRule ^party\.html$ /party [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+rsvp\.html(?:[\s?]|$) [NC]
+RewriteRule ^rsvp\.html$ /rsvp [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+thank-you\.html(?:[\s?]|$) [NC]
+RewriteRule ^thank-you\.html$ /thank-you [R=301,L]
+
+RewriteRule ^story/?$ /story.html [L]
+RewriteRule ^party/?$ /party.html [L]
+RewriteRule ^rsvp/?$ /rsvp.html [L]
+RewriteRule ^thank-you/?$ /thank-you.html [L]

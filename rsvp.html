@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RSVP to celebrate with Thembinkosi and Ndumiso.">
+  <link rel="canonical" href="https://ndumisoandthembinkosi.online/rsvp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thembinkosi & Ndumiso Wedding">
+  <meta property="og:title" content="Thembinkosi & Ndumiso | RSVP">
+  <meta property="og:description" content="RSVP to celebrate with Thembinkosi and Ndumiso.">
+  <meta property="og:url" content="https://ndumisoandthembinkosi.online/rsvp">
+  <meta property="og:image" content="https://ndumisoandthembinkosi.online/assets/NonduAndT_2.jpeg">
+  <meta property="og:image:alt" content="Thembinkosi and Ndumiso wedding portrait">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thembinkosi & Ndumiso | RSVP">
+  <meta name="twitter:description" content="RSVP to celebrate with Thembinkosi and Ndumiso.">
+  <meta name="twitter:image" content="https://ndumisoandthembinkosi.online/assets/NonduAndT_2.jpeg">
+  <title>Thembinkosi & Ndumiso | RSVP</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260327d">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="/">T &amp; N</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="/">Wedding</a>
+        <a href="/story">Our Story</a>
+        <a href="/party">Bridal Party</a>
+        <a class="nav-cta" href="/rsvp">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="rsvp section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">RSVP</p>
+          <h2>We would love to celebrate with you</h2>
+          <p>
+            Kindly let us know if you will be joining us. Please RSVP on or before 15 June 2026.
+          </p>
+        </div>
+
+        <div class="rsvp-deadline-strip reveal" id="rsvp-deadline-strip" aria-live="polite">
+          <div>
+            <p class="eyebrow">RSVP deadline</p>
+            <p class="rsvp-deadline-copy">Responses close 15 June 2026</p>
+          </div>
+          <div class="rsvp-deadline-countdown" id="rsvp-deadline-countdown">
+            <div class="rsvp-deadline-item">
+              <span id="rsvp-days">000</span>
+              <small>Days</small>
+            </div>
+            <div class="rsvp-deadline-item">
+              <span id="rsvp-hours">00</span>
+              <small>Hours</small>
+            </div>
+            <div class="rsvp-deadline-item">
+              <span id="rsvp-minutes">00</span>
+              <small>Minutes</small>
+            </div>
+            <div class="rsvp-deadline-item">
+              <span id="rsvp-seconds">00</span>
+              <small>Seconds</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="rsvp-closed-state hidden reveal" id="rsvp-closed-state">
+          <article class="rsvp-closed-card">
+            <p class="eyebrow">RSVP closed</p>
+            <h3>Thank you for your interest</h3>
+            <p>
+              The RSVP deadline ended on 15 June 2026. We appreciate your interest in celebrating with us.
+            </p>
+            <p>
+              If you need to get in touch with the couple directly, please use the contact details you already have.
+            </p>
+            <a class="button button-secondary" href="/">Back to Wedding Details</a>
+          </article>
+        </div>
+
+        <div class="rsvp-layout" id="rsvp-layout">
+          <form class="rsvp-form reveal" id="rsvp-form">
+            <label>
+              Full Name
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              Attendance
+              <select name="attendance" required>
+                <option value="">Select an option</option>
+                <option value="Joyfully attending">Joyfully attending</option>
+                <option value="Regretfully declining">Regretfully declining</option>
+              </select>
+            </label>
+            <label>
+              Number of Guests
+              <input type="number" name="guests" min="1" max="6" value="1" required>
+            </label>
+            <label>
+              Gifts You Will Bring
+              <div class="gift-picker-field" id="gift-picker-field">
+                <button
+                  class="gift-picker-toggle"
+                  id="gift-picker-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="gift-picker"
+                >
+                  <span class="gift-picker-toggle-label">Select gifts</span>
+                  <span class="gift-picker-toggle-count" id="gift-picker-count">0 selected</span>
+                </button>
+                <div class="gift-picker is-collapsed" id="gift-picker" aria-live="polite">
+                  <p class="gift-picker-note">Loading gifts...</p>
+                </div>
+              </div>
+            </label>
+            <label class="other-gift-field" id="other-gift-field">
+              Other Gift
+              <input type="text" name="other_gift" id="other-gift-input" placeholder="Enter the gift you will bring">
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Share a note for the couple"></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Send RSVP</button>
+            <p class="form-note">
+              Guests who are attending may choose up to 3 gifts from the list below. Unavailable gifts remain visible but are crossed out.
+            </p>
+          </form>
+
+          <div class="rsvp-side reveal">
+            <article class="info-card">
+              <h3>Guest Policy</h3>
+              <p>Our wedding is an intimate celebration with our nearest and dearest. We kindly request no additional guests or plus ones.</p>
+              <p>This is a strictly adults-only ceremony and reception.</p>
+            </article>
+            <article class="info-card">
+              <h3>Dress Code</h3>
+              <p><strong>Plain Elegant Black</strong></p>
+              <p>Ladies: show timeless elegance in plain black attire with confidence and grace.</p>
+              <p>Gentlemen: suit up if you may, otherwise semi-formal black.</p>
+            </article>
+            <article class="info-card">
+              <h3>Gift Selection</h3>
+              <p>The gift list now lives inside the RSVP form so each guest can choose what they will bring.</p>
+              <p>Once a gift has been reserved, it will no longer appear as available for the next guest.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with love for a joyful beginning.</p>
+      <p class="site-credit">Powered by Dry IT</p>
+    </footer>
+  </div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <a class="back-to-top floating-back-to-top" id="back-to-top" href="#top" aria-label="Back to top">↑</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js?v=20260327c"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+node_modules/
+build/
+server.log
+server-error.log
+supabase/.temp/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
