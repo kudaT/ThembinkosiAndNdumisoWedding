@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the wedding guest registry for Thembinkosi and Ndumiso.">
+  <link rel="canonical" href="https://ndumisoandthembinkosi.online/guest-registry">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thembinkosi & Ndumiso Wedding">
+  <meta property="og:title" content="Thembinkosi & Ndumiso | Guest Registry">
+  <meta property="og:description" content="See who is attending and who has declined the celebration.">
+  <meta property="og:url" content="https://ndumisoandthembinkosi.online/guest-registry">
+  <meta property="og:image" content="https://ndumisoandthembinkosi.online/assets/NonduAndT_2.jpeg">
+  <meta property="og:image:alt" content="Thembinkosi and Ndumiso wedding portrait">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thembinkosi & Ndumiso | Guest Registry">
+  <meta name="twitter:description" content="See who is attending and who has declined the celebration.">
+  <meta name="twitter:image" content="https://ndumisoandthembinkosi.online/assets/NonduAndT_2.jpeg">
+  <title>Thembinkosi & Ndumiso | Guest Registry</title>
+  <link rel="icon" type="image/jpeg" href="assets/NonduAndT_2.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260408a">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="/">T &amp; N</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="/">Wedding</a>
+        <a href="/story">Our Story</a>
+        <a href="/party">Bridal Party</a>
+        <a href="/guest-registry.html">Guest Registry</a>
+        <a class="nav-cta" href="/rsvp">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="guest-registry-hero section">
+        <div class="guest-registry-intro reveal">
+          <p class="eyebrow">Guest Registry</p>
+          <h1>See who is celebrating with us</h1>
+          <p class="guest-registry-lead">
+            A live view of our RSVPs, split between guests joining the celebration and those sending their love from afar.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/rsvp">RSVP</a>
+            <a class="button button-secondary" href="/">Back to Wedding Page</a>
+          </div>
+        </div>
+
+        <aside class="guest-registry-summary reveal">
+          <div class="registry-spotlight">
+            <p class="registry-tag">Live Snapshot</p>
+            <h3 id="registry-status-heading">Loading guest list</h3>
+            <p id="registry-status-copy">Pulling RSVP responses from the wedding registry.</p>
+          </div>
+          <div class="guest-registry-kpis">
+            <article class="guest-kpi">
+              <span class="guest-kpi-label">Total RSVPs</span>
+              <strong id="guest-total-rsvps">0</strong>
+            </article>
+            <article class="guest-kpi">
+              <span class="guest-kpi-label">Attending Guests</span>
+              <strong id="guest-total-attending">0</strong>
+            </article>
+            <article class="guest-kpi">
+              <span class="guest-kpi-label">Declined Guests</span>
+              <strong id="guest-total-declined">0</strong>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section class="guest-registry-board section">
+        <div class="guest-registry-panels">
+          <article class="guest-panel reveal">
+            <div class="guest-panel-header">
+              <div>
+                <p class="registry-tag">Joyfully Attending</p>
+                <h2>Celebrating with us</h2>
+              </div>
+              <span class="guest-panel-badge" id="attending-count-badge">0</span>
+            </div>
+            <p class="guest-panel-copy">Guests who have confirmed they will be there on the day.</p>
+            <div class="guest-panel-list" id="attending-list">
+              <p class="guest-panel-empty">Loading attending guests...</p>
+            </div>
+          </article>
+
+          <article class="guest-panel reveal guest-panel-declined">
+            <div class="guest-panel-header">
+              <div>
+                <p class="registry-tag">Regretfully Declining</p>
+                <h2>Sending love from afar</h2>
+              </div>
+              <span class="guest-panel-badge" id="declined-count-badge">0</span>
+            </div>
+            <p class="guest-panel-copy">Guests who responded but won’t be able to attend.</p>
+            <div class="guest-panel-list" id="declined-list">
+              <p class="guest-panel-empty">Loading declined guests...</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="guest-registry-meta reveal">
+          <article class="guest-meta-card">
+            <p class="registry-tag">Updated</p>
+            <h3 id="guest-last-updated">Awaiting data</h3>
+            <p>Refresh the page any time to pull the latest RSVP responses.</p>
+          </article>
+          <article class="guest-meta-card">
+            <p class="registry-tag">Privacy</p>
+            <h3>Names only</h3>
+            <p>This page only shows guest names, attendance status, and guest counts.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with love for a joyful beginning.</p>
+      <p class="site-credit">Powered by Dry IT</p>
+    </footer>
+  </div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <a class="back-to-top floating-back-to-top" id="back-to-top" href="#top" aria-label="Back to top">&#8593;</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js?v=20260408a"></script>
+</body>
+</html>

@@ -56,6 +56,18 @@ for select
 to anon
 using (is_active = true);
 
+drop view if exists public.public_guest_registry;
+create view public.public_guest_registry as
+select
+  id,
+  guest_name,
+  attendance,
+  guest_count,
+  created_at
+from public.wedding_rsvps;
+
+grant select on public.public_guest_registry to anon;
+
 drop function if exists public.submit_wedding_rsvp(text, text, text, integer, text, bigint[], text);
 create or replace function public.submit_wedding_rsvp(
   p_guest_name text,

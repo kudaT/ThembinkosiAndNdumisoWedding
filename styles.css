@@ -21,6 +21,7 @@
   --radius-md: 22px;
   --radius-sm: 16px;
   --max-width: 1180px;
+  --section-pad-y: 6rem;
 }
 
 * {
@@ -196,7 +197,7 @@ textarea {
 .section {
   width: min(calc(100% - 2rem), var(--max-width));
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: var(--section-pad-y) 0;
 }
 
 .hero {
@@ -208,6 +209,16 @@ textarea {
   min-height: calc(100vh - 6rem);
   padding-top: 4rem;
   overflow: hidden;
+}
+
+.guest-registry-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  min-height: auto;
+  padding-top: 4rem;
 }
 
 .hero-backdrop {
@@ -265,6 +276,7 @@ textarea {
 }
 
 .hero-intro,
+.guest-registry-lead,
 .section-heading p,
 .timeline-content p,
 .person-copy p,
@@ -298,6 +310,7 @@ textarea {
 }
 
 .countdown-strip h2,
+.guest-registry-intro h1,
 .timeline-content h3,
 .person-copy h3,
 .family-card h3,
@@ -311,6 +324,7 @@ textarea {
 
 .countdown-strip p,
 .rsvp-deadline-strip p,
+.guest-registry-summary p,
 .timeline-content p,
 .person-copy p,
 .family-card p,
@@ -360,6 +374,216 @@ textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin: 2rem 0;
+}
+
+.guest-registry-intro h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.95;
+  color: var(--text);
+  text-shadow: 0 8px 24px rgba(255, 255, 255, 0.32);
+}
+
+.guest-registry-lead {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.guest-registry-intro {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.guest-registry-summary,
+.guest-panel,
+.guest-meta-card,
+.guest-entry {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(78, 78, 78, 0.98), rgba(52, 52, 52, 0.98));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.guest-registry-summary,
+.guest-panel,
+.guest-meta-card {
+  color: var(--text-on-dark);
+  border-radius: var(--radius-lg);
+}
+
+.guest-registry-summary {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.6rem;
+  overflow: hidden;
+}
+
+.guest-registry-summary::before {
+  content: "";
+  position: absolute;
+  inset: auto -4rem -5rem auto;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.registry-spotlight {
+  position: relative;
+  padding: 1.1rem 1.15rem;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.registry-spotlight h3,
+.guest-panel h2,
+.guest-meta-card h3,
+.guest-entry h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  color: var(--text-on-dark);
+}
+
+.guest-panel .registry-tag,
+.guest-meta-card .registry-tag,
+.registry-spotlight .registry-tag {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.registry-spotlight h3 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.registry-spotlight p:last-child {
+  margin-bottom: 0;
+}
+
+.guest-registry-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.guest-kpi {
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.guest-kpi-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft-on-dark);
+}
+
+.guest-kpi strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+  color: var(--text-on-dark);
+}
+
+.guest-registry-board {
+  padding-top: 0;
+}
+
+.guest-registry-panels,
+.guest-registry-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.guest-registry-meta {
+  margin-top: 1.5rem;
+}
+
+.guest-panel,
+.guest-meta-card {
+  padding: 1.6rem;
+}
+
+.guest-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.guest-panel h2 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.guest-panel-copy,
+.guest-meta-card p,
+.guest-entry p,
+.guest-entry span {
+  color: var(--muted-on-dark);
+  line-height: 1.65;
+}
+
+.guest-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-on-dark);
+  font-weight: 600;
+}
+
+.guest-panel-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.guest-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 24px;
+}
+
+.guest-entry-main p,
+.guest-entry-meta span,
+.guest-panel-empty {
+  margin: 0.2rem 0 0;
+}
+
+.guest-entry-meta {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.guest-panel-empty {
+  padding: 1.2rem 0;
+  color: var(--soft-on-dark);
+}
+
+.guest-panel-declined,
+.guest-meta-card {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(70, 70, 70, 0.98), rgba(36, 36, 36, 0.98));
 }
 
 .hero-details div,
@@ -878,6 +1102,161 @@ textarea {
   grid-column: span 2;
 }
 
+@media (min-width: 1600px) {
+  :root {
+    --max-width: 1440px;
+    --section-pad-y: 7rem;
+  }
+
+  .site-header {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .site-nav {
+    gap: 1.35rem;
+    font-size: 1rem;
+  }
+
+  .hero,
+  .guest-registry-hero {
+    gap: 4rem;
+  }
+
+  .hero-details,
+  .party-grid,
+  .family-grid,
+  .registry-grid,
+  .contact-layout,
+  .guest-registry-panels,
+  .guest-registry-meta {
+    gap: 1.8rem;
+  }
+
+  .portrait-stack {
+    min-height: 46rem;
+  }
+
+  .portrait-main {
+    width: min(100%, 34rem);
+    height: 40rem;
+  }
+
+  .portrait-accent {
+    width: 18rem;
+    height: 20rem;
+  }
+
+  .countdown-strip,
+  .rsvp-deadline-strip,
+  .rsvp-form,
+  .guest-registry-summary,
+  .guest-panel,
+  .guest-meta-card,
+  .contact-card,
+  .info-card,
+  .timeline-content,
+  .thank-you-card {
+    padding: 2rem;
+  }
+
+  .guest-entry {
+    padding: 1.15rem 1.25rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --max-width: 1760px;
+    --section-pad-y: 8rem;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .site-header {
+    margin-top: 1.4rem;
+    padding: 1.2rem 1.75rem;
+  }
+
+  .brand {
+    font-size: 2.35rem;
+  }
+
+  .site-nav {
+    gap: 1.6rem;
+    font-size: 1.05rem;
+  }
+
+  .hero,
+  .guest-registry-hero {
+    gap: 5rem;
+    min-height: calc(92vh - 6rem);
+  }
+
+  .hero-intro,
+  .guest-registry-lead,
+  .section-heading p {
+    font-size: 1.12rem;
+  }
+
+  .hero-details {
+    gap: 1.25rem;
+  }
+
+  .portrait-stack {
+    min-height: 52rem;
+  }
+
+  .portrait-main {
+    width: min(100%, 39rem);
+    height: 45rem;
+  }
+
+  .portrait-note {
+    width: 15rem;
+    padding: 2.25rem;
+  }
+
+  .portrait-note p {
+    font-size: 2.6rem;
+  }
+
+  .portrait-accent {
+    width: 20rem;
+    height: 23rem;
+  }
+
+  .countdown-strip,
+  .rsvp-deadline-strip {
+    padding: 2.25rem;
+  }
+
+  .countdown {
+    gap: 1.25rem;
+  }
+
+  .countdown-item span {
+    font-size: clamp(2.6rem, 3vw, 3.8rem);
+  }
+
+  .party-grid,
+  .family-grid,
+  .registry-grid,
+  .contact-layout {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 19rem;
+    gap: 1.25rem;
+  }
+
+  .site-footer {
+    padding: 2.4rem 2.4rem 3.2rem;
+  }
+}
+
 .rsvp-form {
   display: grid;
   gap: 1rem;
@@ -1202,6 +1581,7 @@ body.js-enabled .reveal.visible {
 
 @media (max-width: 1080px) {
   .hero,
+  .guest-registry-hero,
   .family-layout,
   .registry-layout,
   .rsvp-layout {
@@ -1233,7 +1613,9 @@ body.js-enabled .reveal.visible {
   .party-grid,
   .family-grid,
   .registry-grid,
-  .contact-layout {
+  .contact-layout,
+  .guest-registry-panels,
+  .guest-registry-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1287,6 +1669,10 @@ body.js-enabled .reveal.visible {
     gap: 2rem;
   }
 
+  .guest-registry-intro {
+    padding: 1.2rem;
+  }
+
   .rsvp-side {
     order: -1;
   }
@@ -1296,7 +1682,10 @@ body.js-enabled .reveal.visible {
   .family-grid,
   .registry-grid,
   .contact-layout,
-  .gallery-grid {
+  .gallery-grid,
+  .guest-registry-kpis,
+  .guest-registry-panels,
+  .guest-registry-meta {
     grid-template-columns: 1fr;
   }
 
@@ -1330,9 +1719,14 @@ body.js-enabled .reveal.visible {
 
   .countdown-strip,
   .rsvp-deadline-strip,
-  .site-footer {
+  .site-footer,
+  .guest-entry {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .guest-entry-meta {
+    text-align: left;
   }
 
   .rsvp-deadline-countdown {
